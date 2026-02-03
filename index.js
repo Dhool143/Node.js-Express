@@ -28,7 +28,7 @@ app.get('/foo', (req, res) => {
 
 // 4. REGULAR EXPRESSION ROUTE
 // This matches /user and /username. We use / / instead of ' ' to stop the PathError crash.
-app.get(/^\/user(name)?$/, (req, res) => {
+app.get(/\/user(name)?$/, (req, res) => {
     res.send('Matched /user or /username via Regular Expression');
 });
 
