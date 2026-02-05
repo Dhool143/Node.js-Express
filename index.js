@@ -26,14 +26,15 @@ app.get('/foo', (req, res) => {
     res.send('and sometimes that');
 });
 
-// 4. REGULAR EXPRESSION ROUTE
-// This matches /user and /username. We use / / instead of ' ' to stop the PathError crash.
+//// REGULAR EXPRESSION ROUTE
+// This uses a regular expression (//) instead of a string to match /user and /username.
 app.get(/\/user(name)?$/, (req, res) => {
     res.send('Matched /user or /username via Regular Expression');
 });
 
-// 5. DYNAMIC ROUTE HANDLING (Your specific requirement)
-// This captures whatever is after /user/ as :username
+// // DYNAMIC ROUTE HANDLING (Specific Requirement)
+// This captures whatever comes after /user/ as a username parameter.
+
 app.get('/user/:username', (req, res) => {
     const name = req.params.username;
     res.send(`Hello ${name}`);
